@@ -9,6 +9,7 @@ CREATE TABLE DimFecha (
     Trimestre INT,
     DiaSemana VARCHAR(50)
 );
+GO
 
 -- DDL para la Dimensión de Tipos de Gastos
 CREATE TABLE DimTipoGasto (
@@ -16,6 +17,7 @@ CREATE TABLE DimTipoGasto (
     TipoGasto VARCHAR(50) NOT NULL,
     CategoriaPrincipal VARCHAR(50)
 );
+GO
 
 -- DDL para la Dimensión de Personas
 CREATE TABLE DimPersona (
@@ -23,6 +25,7 @@ CREATE TABLE DimPersona (
     NombrePersona VARCHAR(50) NOT NULL,
     Relacion VARCHAR(50)
 );
+GO
 
 -- DDL para la Dimensión de Ubicación
 CREATE TABLE DimUbicacion (
@@ -30,6 +33,7 @@ CREATE TABLE DimUbicacion (
     Ciudad VARCHAR(100),
     Pais VARCHAR(100)
 );
+GO
 
 -- DDL para la Dimensión de Cuentas
 CREATE TABLE DimCuenta (
@@ -38,8 +42,9 @@ CREATE TABLE DimCuenta (
     TipoCuenta VARCHAR(50),
     Banco VARCHAR(100)
 );
+GO
 
--- DDL para la Tabla de Hechos (Fact Table)
+-- DDL para la Tabla de Hechos de Transacciones
 CREATE TABLE FactTransacciones (
     TransaccionID INT IDENTITY(1,1) PRIMARY KEY,
     FechaID INT NOT NULL,
@@ -55,3 +60,15 @@ CREATE TABLE FactTransacciones (
     FOREIGN KEY (UbicacionID) REFERENCES DimUbicacion(UbicacionID),
     FOREIGN KEY (CuentaID) REFERENCES DimCuenta(CuentaID)
 );
+GO
+
+-- DDL para la Tabla de Hechos de Saldos
+CREATE TABLE FactSaldo (
+    SaldoID INT IDENTITY(1,1) PRIMARY KEY,
+    CuentaID INT NOT NULL,
+    FechaID INT NOT NULL,
+    Saldo DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (CuentaID) REFERENCES DimCuenta(CuentaID),
+    FOREIGN KEY (FechaID) REFERENCES DimFecha(FechaID)
+);
+GO

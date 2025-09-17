@@ -24,7 +24,7 @@ El núcleo de este proyecto fue el desarrollo de un pipeline de datos completo, 
 
 El análisis culminó en un dashboard en Power BI que sirve como una herramienta para explorar y entender las finanzas personales.
 
-**Explora el dashboard aquí:** [Análisis de Finanzas Personales en Power BI](https://app.powerbi.com/view?r=eyJrIjoiNDExYTc5NTYtMGU1Ny00MzA2LTlhYjUtYmQ0MTE1ZWJkYjk4IiwidCI6ImRmNGI2MzcyLWEwM2EtNDZmMC05YmY1LTdmOGQzNzhhMzMzNCIsImMiOjR9)
+**Explora el dashboard aquí:** [Análisis de Finanzas Personales en Power BI](https://app.powerbi.com/view?r=eyJrIjoiMGFjYmE4MjQtNmQ2Yy00ODUyLWFiY2EtOWM1MTBkMGYxZmE4IiwidCI6ImRmNGI2MzcyLWEwM2EtNDZmMC05YmY1LTdmOGQzNzhhMzMzNCIsImMiOjR9)
 
 **Hallazgos Principales:**
 
